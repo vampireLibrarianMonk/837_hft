@@ -35,7 +35,7 @@ The Domain Model for the High-Frequency Trading Application outlines the key ent
 ## Class Diagram
 The Class Diagram details the key classes in the system, such as Trader, Order, Portfolio and MarketData. Each class contains attributes relevant to its role, like the Trader class with email and name and the Order class with order type and status. Relationships between classes, such as the association between a Trader and their Portfolio or Orders, are also depicted, reflecting the system's structure.
 
-![Class Diagram](class_diagram.png)
+![Class Diagram](diagrams/class_diagram.png)
 
 ## State Chart Diagram
 The State Chart Diagram explains the state transitions of critical objects, such as an Order. An Order might transition through states like "Pending," "Executed“ and "Cancelled" with specific actions triggered by these transitions, such as notifying the Trader or updating the Portfolio's value.
