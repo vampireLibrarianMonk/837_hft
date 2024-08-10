@@ -1,0 +1,299 @@
+Classes
+
+class Account:
+    def __init__(self, account_id, account_type, balance):
+        self.__account_id = account_id
+        self.__balance = balance
+        self.__account_type = account_type
+        self.__portfolios = []
+
+    @property
+    def account_id(self):
+        return self.__account_id
+
+    @property
+    def account_type(self):
+        return self.__account_type
+
+    @property
+    def balance(self):
+        return self.__balance
+
+    @property
+    def portfolios(self):
+        return self.__portfolios
+
+    def add_portfolio(self, portfolio):
+        self.__portfolios.append(portfolio)
+
+    def deposit(self, amount):
+        # Code to deposit amount to the account
+        pass
+
+    def get_balance(self):
+        # Code to return the account balance
+        pass
+
+    def withdraw(self, amount):
+        # Code to withdraw amount from the account
+        pass
+
+class Portfolio:
+    def __init__(self, account_id, portfolio_id, portfolio_name, portfolio_type, settled_cash_value):
+        self.__account_id = account_id
+        self.__portfolio_id = portfolio_id
+        self.__portfolio_name = portfolio_name
+        self.__portfolio_type = portfolio_type
+        self.__settled_cash_value = settled_cash_value
+
+    @property
+    def account_id(self):
+        return self.__account_id
+
+    @property
+    def portfolio_id(self):
+        return self.__portfolio_id
+
+    @property
+    def portfolio_name(self):
+        return self.__portfolio_name
+
+    @property
+    def portfolio_type(self):
+        return self.__portfolio_type
+
+    @property
+    def settled_cash_value(self):
+        return self.__settled_cash_value
+
+    def add_order(self, order):
+        # Code to add an order to the portfolio
+        pass
+
+    def get_portfolio_value(self):
+        # Code to return the portfolio value
+        pass
+
+    def remove_order(self, order):
+        # Code to remove an order from the portfolio
+        pass
+
+class Trader:
+    def __init__(self, email, name, trader_id):
+        self.__email = email
+        self.__name = name
+        self.__trader_id = trader_id
+
+    @property
+    def email(self):
+        return self.__email
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def trader_id(self):
+        return self.__trader_id
+
+    def authenticate(self):
+        # Code to authenticate the trader
+        pass
+
+    def create_strategy(self, strategy):
+        # Code to create a trading strategy
+        pass
+
+    def place_order(self, order):
+        # Code to place an order
+        pass
+
+class Strategy:
+    def __init__(self, name, parameters, strategy_id, trader_id):
+        self.__name = name
+        self.__parameters = parameters
+        self.__strategy_id = strategy_id
+	self.__trader_id = trader_id
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def parameters(self):
+        return self.__parameters
+
+    @property
+    def strategy_id(self):
+        return self.__strategy_id
+
+    @property
+    def trader_id(self):
+        return self.__trader_id
+
+    def adjust_parameters(self, new_parameters):
+        pass
+
+    def apply(self):
+        # Code to apply the strategy
+        pass
+
+    def evaluate_performance(self):
+        # Code to evaluate the performance of the strategy
+        pass
+
+class Order:
+    def __init__(self, order_id, order_type, price, quantity, status, strategy_id, symbol, trader_id, portfolio_id):
+        self.__order_id = order_id
+        self.__order_type = order_type
+        self.__price = price
+        self.__quantity = quantity
+        self.__status = status
+	self.__strategy_id = strategy_id
+        self.__symbol = symbol
+	self.__trader_id = trader_id
+	self.__portfolio_id = portfolio_id
+
+    def cancel(self):
+        # Code to cancel the order
+        pass
+
+    def execute(self):
+        # Code to execute the order
+        pass
+
+    @property
+    def order_id(self):
+        return self.__order_id
+
+    @property
+    def order_type(self):
+        return self.__order_type
+
+    @property
+    def price(self):
+        return self.__price
+
+    @property
+    def quantity(self):
+        return self.__quantity
+
+    @property
+    def status(self):
+        return self.__status
+
+    @property
+    def strategy_id(self):
+        return self.__strategy_id
+
+    @property
+    def symbol(self):
+        return self.__symbol
+
+    @property
+    def trader_id(self):
+        return self.__trader_id
+
+    @property
+    def portfolio_id(self):
+        return self.__portfolio_id
+
+    def update_status(self, status):
+        # Code to update the status of the order
+        self.__status = status
+
+class MarketData:
+    def __init__(self, symbol, price, timestamp):
+        self.__symbol = symbol
+        self.__price = price
+        self.__timestamp = timestamp
+
+    @property
+    def symbol(self):
+        return self.__symbol
+
+    @property
+    def price(self):
+        return self.__price
+
+    @property
+    def timestamp(self):
+        return self.__timestamp
+
+    def get_latest_quote(self):
+        # Code to get the latest market quote
+        pass
+
+    def subscribe(self, trader):
+        # Code to subscribe a trader to market data updates
+        pass
+
+    def unsubscribe(self, trader):
+        # Code to unsubscribe a trader from market data updates
+        pass
+
+class MachineLearningModel:
+    def __init__(self, accuracy, model_id, model_type, training_data):
+        self.__accuracy = accuracy
+        self.__model_id = model_id
+        self.__model_type = model_type
+        self.__training_data = training_data
+
+    @property
+    def accuracy(self):
+        return self.__accuracy
+
+    @property
+    def model_id(self):
+        return self.__model_id
+
+    @property
+    def model_type(self):
+        return self.__model_type
+
+    @property
+    def training_data(self):
+        return self.__training_data
+
+    def evaluate_accuracy(self):
+        # Code to evaluate the accuracy of the model
+        pass
+
+    def predict(self, data):
+        # Code to make a prediction with the model
+        pass
+
+    def train(self):
+        # Code to train the model
+        pass
+
+
+class Clearinghouse:
+    def __init__(self, clearing_house_id, name, location):
+        self.__clearinghouse_id = clearinghouse_id
+        self.__name = name
+        self.__location = location
+
+    @property
+    def clearing_house_id(self):
+        return self.__clearing_house_id
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def location(self):
+        return self.__location
+
+    def settle_trade(self):
+        # Code to settle a trade
+        pass
+
+    def report_status(self):
+        # Code to report the status of a trade
+        pass
+
+    def validate_transaction(self):
+        # Code to validate a transaction
+        pass

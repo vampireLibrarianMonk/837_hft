@@ -1,0 +1,66 @@
+Database Tables
+
+CREATE TABLE Account (
+    account_id INT PRIMARY KEY,
+    account_type VARCHAR(50),
+    balance DECIMAL(15, 2)
+);
+
+CREATE TABLE Portfolio (
+    account_id INT,
+    portfolio_id INT PRIMARY KEY,
+    portfolio_name VARCHAR(100),
+    portfolio_type VARCHAR(50),
+    settled_cash_value DECIMAL(15, 2),
+    FOREIGN KEY (account_id) REFERENCES Account(account_id)
+);
+
+CREATE TABLE Trader (
+    email VARCHAR(100),
+    name VARCHAR(100),
+    trader_id INT PRIMARY KEY
+);
+
+CREATE TABLE Strategy (
+    name VARCHAR(100),
+    parameters TEXT,
+    strategy_id INT PRIMARY KEY,
+    trader_id INT,
+    FOREIGN KEY (trader_id) REFERENCES Trader(trader_id)
+);
+
+CREATE TABLE Order (
+    order_id INT PRIMARY KEY,
+    order_type VARCHAR(10),
+    price DECIMAL(10, 2),
+    quantity INT,
+    status VARCHAR(20),
+    strategy_id INT,
+    symbol VARCHAR(10),
+    trader_id INT,
+    portfolio_id INT,
+    FOREIGN KEY (trader_id) REFERENCES Trader(trader_id),
+    FOREIGN KEY (strategy_id) REFERENCES Strategy(strategy_id),
+    FOREIGN KEY (portfolio_id) REFERENCES Portfolio(portfolio_id)
+);
+
+CREATE TABLE MarketData (
+    symbol VARCHAR(10),
+    price DECIMAL(10, 2),
+    timestamp TIMESTAMP,
+    PRIMARY KEY (symbol, timestamp)
+);
+
+CREATE TABLE MachineLearningModel (
+    model_id INT PRIMARY KEY,
+    model_type VARCHAR(50),
+    accuracy DECIMAL(5, 2),
+    training_data TEXT
+);
+
+
+CREATE TABLE Clearinghouse (
+    clearinghouse_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    location VARCHAR(100)
+);

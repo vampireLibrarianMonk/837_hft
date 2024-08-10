@@ -47,7 +47,7 @@ The Component Diagram describes the system's modular structure, showing how diff
 
 ![Component Diagram](diagrams/component_diagram.png)
 
-## Architecture Pattern
+## Deployment Diagram (architecture pattern explanation)
 The system adopts a Microservices architecture, where each core function, such as order management, is handled by an independent service. This approach allows for independent development, scaling and deployment of each component, ensuring the system is both scalable and resilient. The choice of Microservices is justified by the need for high availability, flexibility in scaling specific parts of the system and ease of maintenance.
 
 ### User Interface & Interaction
