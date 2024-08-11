@@ -1,5 +1,7 @@
 # SWENG 837 Course Project
 
+[Youtube Briefing](https://www.youtube.com/watch?v=7barKlW4fZA)
+
 ## Use Case Diagram
 The Use Case Diagram highlights the key actors, including traders, market data providers and clearinghouses, who interact with the system. Traders perform actions like placing orders, viewing market data and executing trades. The system interfaces with external market data providers to retrieve real-time information.
 
